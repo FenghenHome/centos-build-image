@@ -22,7 +22,7 @@ RUN yum install -y gcc-c++ make perl \
     && tar xf boost_1_72_0.tar.gz \
     && cd boost_1_72_0 \
     && ./bootstrap.sh \
-    && ./b2 -j$(nproc) --with-system --with-program_options variant=release link=static threading=multi runtime-link=shared install \
+    && ./b2 -j$(nproc) --with-system --with-thread --with-program_options variant=release link=static threading=multi runtime-link=shared install \
     && cd .. \
     && rm -rf boost_1_72_0.tar.gz boost_1_72_0 \
     \
